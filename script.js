@@ -10,7 +10,7 @@ $.ajax({
                                 <div class="card-body">
                                 <h5 class="card-title">${m.Title}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">${m.Year}</h6>
-                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detail">Lihat</a>
+                                <a href="#" class="btn btn-primary detail-button" data-bs-toggle="modal" data-bs-target="#detail" data-movieid="${m.imdbID}">Lihat</a>
                                 </div>
                             </div>
                         </div>`
@@ -18,5 +18,10 @@ $.ajax({
         });
 
         $('.movie-container').html(cards);
+
+        // Ketika tombol Lihat di klik
+        $('.detail-button').on('click', function(){
+            console.log($(this).data('movieid'))
+        })
     },
 })
